@@ -11,7 +11,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20220907190108_Add-Model")]
+    [Migration("20220908121240_Add-Model")]
     partial class AddModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,7 @@ namespace Persistence.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("DailyPrice");
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -69,17 +69,17 @@ namespace Persistence.Migrations
 
                     b.Property<decimal>("DailyPrice")
                         .HasColumnType("decimal(18,2)")
-                        .HasColumnName("DailyPrice1");
+                        .HasColumnName("DailyPrice");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ImageUrl1");
+                        .HasColumnName("ImageUrl");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ImageUrl");
+                        .HasColumnName("Name");
 
                     b.HasKey("Id");
 
